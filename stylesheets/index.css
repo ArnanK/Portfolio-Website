@@ -1,4 +1,4 @@
-/*----------------Initial Configurations----------------*/
+/* ----------------Initial Configurations---------------- */
 
 * {
     box-sizing: border-box;
@@ -66,6 +66,51 @@ nav .nav-list ul li:hover {
     color: var(--font-color);
 }
 
+/* ------------------Navbar Mobile Hamburger---------------------------- */
+.navbar-mobile {
+    display: none; /* Hidden by default */
+}
+.navbar-mobile.active {
+    display: block; /* Show hamburger menu when active */
+}
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 15;
+}
+.hamburger div {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+}
+.navbar-mobile ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--navbar-background);
+    padding: 10px 20px;
+    margin: 0;
+}
+.navbar-mobile ul li {
+    margin-bottom: 15px;
+}
+.navbar-mobile ul li:last-child {
+    margin-bottom: 0;
+}
+.navbar-mobile ul li a {
+    color: var(--font-color);
+    text-decoration: none;
+}
+
 /* ------------------Profile--------------------------- */
 .profile {
     display: flex;
@@ -94,14 +139,14 @@ nav .nav-list ul li:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center; /* Ensure the text is centered */
-    margin-top: 40px; /* Adjust margin if needed */
+    text-align: center;
+    margin-top: 40px;
 }
 
 .skills h2 {
-    font-size: 2rem; /* Adjust font size */
+    font-size: 2rem;
     color: var(--font-color);
-    margin-bottom: 20px; /* Space between title and skills icons */
+    margin-bottom: 20px;
 }
 
 .box-container {
@@ -140,7 +185,6 @@ footer {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .footer-bottom {
     margin-top: 20px;
     font-size: 14px;
@@ -151,7 +195,6 @@ footer {
 .footer-bottom p {
     margin: 0;
 }
-
 
 /* ------------------Projects Section--------------------- */
 .projects {
@@ -214,10 +257,20 @@ footer {
 
 /* ------------------Mobile Responsive----------------- */
 @media (max-width: 850px) {
-    nav {
-        flex-direction: column;
-        align-items: center;
+  
+
+    .hamburger {
+        display: flex;
     }
+
+    .navbar-mobile {
+        display: none;
+    }
+
+    .navbar-mobile.active {
+        display: block;
+    }
+
     .profile .pfp-pic {
         height: 200px;
         width: 200px;
